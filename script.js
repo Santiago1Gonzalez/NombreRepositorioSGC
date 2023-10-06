@@ -24,10 +24,14 @@ function handleFile(file) {
     img.size(640, 480); // Establece el tamaño de la imagen
     image(img, 0, 0); // Muestra la imagen en el canvas
     classifyImage(); // Clasifica la imagen
-  } else {
+  }     if (img) {
+    img.remove(); // Elimina la imagen anterior si existe
+  }else {
     console.log('El archivo seleccionado no es una imagen.');
   }
 }
+
+
 
 function gotResult(error, results) {
   if (error) {
